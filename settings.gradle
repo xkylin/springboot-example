@@ -1,0 +1,5 @@
+rootProject.name = 'springboot-example'
+
+include 'springboot-example-mybatis'
+include 'springboot-example-docker'
+
