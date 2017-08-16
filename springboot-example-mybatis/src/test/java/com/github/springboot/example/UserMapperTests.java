@@ -2,11 +2,11 @@ package com.github.springboot.example;
 
 import com.github.pagehelper.PageHelper;
 import com.github.springboot.example.entities.User;
-import com.github.springboot.example.repository.UserMapper;
+import com.github.springboot.example.repository.IUserMapper;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -28,21 +28,42 @@ import java.util.List;
 public class UserMapperTests {
 
 	@Autowired
-	private UserMapper userMapper;
+	private IUserMapper IUserMapper;
 
 	@Test
 	public void testInsert() {
 		User user = new User();
-		user.setName("King");
+		user.setName("Susan");
 		user.setAge(18);
-		this.userMapper.insert(user);
+		int count = this.IUserMapper.insert(user);
+		Assert.assertEquals(1, count);
+	}
+
+	@Test
+	public void testUpdate() {
+		User user = new User();
+		user.setId(3L);
+		user.setName("test");
+//		user.setAge(60);
+		int count = this.IUserMapper.update(user);
+		Assert.assertEquals(1, count);
+		user.setId(100L);
+		count = this.IUserMapper.update(user);
+		Assert.assertEquals(0, count);
 	}
 
 	@Test
 	public void testSelectAll() {
-		PageHelper.startPage(1, 1);
-		List<User> users = this.userMapper.selectAll();
-		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" + users.get(0));
+		PageHelper.startPage(1, 10);
+		List<User> users = this.IUserMapper.selectAll();
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" + users.size());
+
+		User user = new User();
+		user.setAge(18);
+		user.setOnlyActive(true);
+		users = this.IUserMapper.selectAllByCondition(user);
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" + users.size());
+
 	}
 
 }

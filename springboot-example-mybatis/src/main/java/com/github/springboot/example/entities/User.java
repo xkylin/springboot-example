@@ -5,12 +5,14 @@ public class User {
 
     private String name;
 
-    private int age;
+    private Integer age;
+
+    private boolean isOnlyActive;
 
     public User() {
     }
 
-    public User(Long id, String name, int age) {
+    public User(Long id, String name, Integer age) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -32,12 +34,20 @@ public class User {
         this.name = name;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public boolean isOnlyActive() {
+        return isOnlyActive;
+    }
+
+    public void setOnlyActive(boolean onlyActive) {
+        isOnlyActive = onlyActive;
     }
 
     @Override
