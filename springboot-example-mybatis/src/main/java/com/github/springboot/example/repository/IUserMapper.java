@@ -12,6 +12,8 @@ public interface IUserMapper {
 
     public int update(User user);
 
+    public User selectById(Long id);
+
     public List<User> selectAll();
 
     public List<User> selectAllByCondition(User user);
