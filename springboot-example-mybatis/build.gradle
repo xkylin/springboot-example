@@ -2,9 +2,11 @@ version '1.0.0'
 
 dependencies {
 	compile(
-//		'org.springframework.boot:spring-boot-starter-jta-atomikos',
+			'mysql:mysql-connector-java',
+		"org.springframework.boot:spring-boot-configuration-processor",
+		'org.springframework.boot:spring-boot-starter-jta-atomikos',
 		'org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.0',
 		'com.github.pagehelper:pagehelper:5.0.4'
 	)
-	runtime('mysql:mysql-connector-java')
+//	runtime('mysql:mysql-connector-java')
 }

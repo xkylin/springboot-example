@@ -1,9 +1,11 @@
-package com.github.springboot.example.repository;
+package com.github.springboot.example.repository.boot;
 
 import com.github.springboot.example.entities.User;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface IUserMapper {
 
     public int insert(User user);
