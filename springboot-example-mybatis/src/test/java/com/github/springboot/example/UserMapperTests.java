@@ -2,7 +2,7 @@ package com.github.springboot.example;
 
 import com.github.pagehelper.PageHelper;
 import com.github.springboot.example.entities.User;
-import com.github.springboot.example.repository.IUserMapper;
+import com.github.springboot.example.repository.boot.IUserMapper;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

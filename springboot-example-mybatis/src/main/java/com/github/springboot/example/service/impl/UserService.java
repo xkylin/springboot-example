@@ -2,7 +2,7 @@ package com.github.springboot.example.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.springboot.example.entities.User;
-import com.github.springboot.example.repository.IUserMapper;
+import com.github.springboot.example.repository.boot.IUserMapper;
 import com.github.springboot.example.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
