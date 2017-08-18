@@ -1,13 +1,13 @@
-package com.github.springboot.example;
+package com.github.springboot.example.docker;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@Configuration
+@SpringBootApplication
 @EnableAutoConfiguration
-@ComponentScan
+@MapperScan("com.github.springboot.example.docker.repository.boot")
 public class Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
