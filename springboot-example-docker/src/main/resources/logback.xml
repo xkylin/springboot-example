@@ -15,7 +15,7 @@
     <!--<include resource="org/springframework/boot/logging/logback/console-appender.xml" />-->
     <!--<include resource="org/springframework/boot/logging/logback/file-appender.xml" />-->
     <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径-->
-    <property name="LOG_HOME" value="d:/temp/logs/springboot" />
+    <property name="LOG_HOME" value="d:/temp/logs/${PROJECT_NAME}" />
     <!--<property name="log.base.path" value="d:/temp/logs/springboot" />-->
     <!--<property name="log.max.size" value="1MB" />-->
     <!--<property name="log.history.day" value="30" />-->
