@@ -10,7 +10,15 @@ dependencies {
 	runtime("mysql:mysql-connector-java")
 }
 
+jar {
+	baseName = 'springboot-example-docker'
+	version = '1.0.0'
+}
+
+mainClassName = 'com.github.springboot.example.docker.Application'
+
 task buildDocker(type: Docker, dependsOn: build) {
+//	push = true
 	applicationName = jar.baseName
 	dockerfile = file('src/main/docker/Dockerfile')
 	doFirst {
